@@ -1,0 +1,41 @@
+import React from 'react';
+import { View, Text, Button, Image, TextInput } from 'react-native';
+
+const App = () => {
+  return (
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: '#ECF2FA' }} />
+
+      <Button
+        title="여행지 추천"
+        onPress={() => {}}
+        style={{ marginStart: 14, marginEnd: 5, marginTop: 8 }}
+      />
+      <Button
+        title="숙소 추천"
+        onPress={() => {}}
+        style={{ marginStart: 5, marginEnd: 14, marginBottom: 70 }}
+      />
+
+      <Text style={{ marginStart: 3, marginBottom: 10 }}>이달의 여행지</Text>
+
+      <Image
+        style={{ flex: 1, aspectRatio: 1.07, marginStart: 14, marginEnd: 13, marginBottom: 165 }}
+        source={require('./jeju1.jpg')}
+      />
+      <Image
+        style={{ flex: 1, aspectRatio: 1.43, marginStart: 13, marginEnd: 14, marginBottom: 70 }}
+        source={require('./jeju2.jpg')}
+      />
+
+      <Text style={{ marginStart: 14, marginBottom: 20 }}>이달의 숙소</Text>
+
+      <Image
+        style={{ flex: 1, aspectRatio: 1.43, marginTop: 48, marginEnd: 5 }}
+        source={require('./gang2.jpg')}
+      />
+    </View>
+  );
+};
+
+export default App;
