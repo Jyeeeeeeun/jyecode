@@ -1,0 +1,49 @@
+import React from 'react';
+import { View, Text, Button, Image, Linking } from 'react-native';
+
+const HomeScreen = () => {
+  const onButtonBClicked = () => {
+    Linking.openURL('https://booking.parnashoteljeju.com/reservation/?code=H0217');
+  };
+
+  const onButton6Clicked = () => {
+    Linking.openURL('https://www.instagram.com/parnas.hotel.jeju/');
+  };
+
+  const onButton7Clicked = () => {
+    Linking.openURL('https://www.google.co.kr/travel/search?q=%ED%8C%8C%EB%A5%B4%EB%82%98%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC&g2lb=2502548%2C2503771%2C2503781%2C4258168%2C4270442%2C4284970%2C4291517%2C4306835%2C4429192%2C4515404%2C4597339%2C4757164%2C4778035%2C4814050%2C4850738%2C4864715%2C4874190%2C4886480%2C4893075%2C4920132%2C4924070%2C4965990%2C4985712%2C4990494%2C10206872%2C72248281%2C72256471%2C72271034%2C72271797%2C72272134%2C72272135%2C72272556%2C72276044%2C72276652&hl=ko-KR&gl=kr&ssta=1&ts=CAESABpHCikSJzIlMHgzNTBjNWI4NTEyZTNmMzZmOjB4NDliNDU1ZTM0NWFmNzRkYhIaEhQKBwjnDxAJGAMSBwjnDxAJGAQYATICEAA&qs=CAEyE0Nnb0kyLW05cmJTOGxkcEpFQUU4AkILCdt0r0XjVbRJGAFCCwnbdK9F41W0SRgB&ap=ugEHcmV2aWV3cw&ictx=1&sa=X&ved=0CAAQ5JsGahcKEwi4wMLv5qz_AhUAAAAAHQAAAAAQCw');
+  };
+
+  const onButton14Clicked = () => {
+    Linking.openURL('https://map.naver.com/v5/entry/place/1995490141?lng=126.40597079999954&lat=33.24464399999985&placePath=%2Freview%2Fvisitor&entry=plt');
+  };
+
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Image
+        source={require('./path/to/jeju4.jpg')}
+        style={{ width: '100%', height: 200, marginBottom: 22 }}
+      />
+      <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>파르나스 호텔 제주</Text>
+      <Text style={{ fontSize: 12, color: '#000000', marginBottom: 9 }}>5성급</Text>
+      <Text style={{ marginBottom: 307 }}>체크인 15:00</Text>
+      <Text style={{ marginBottom: 22 }}>체크아웃 11:00</Text>
+      <Text style={{ marginHorizontal: 65 }}>
+        파르나스 호텔 제주는 중문 색달 해변 근처 주상절리 위에 위치하고 있어, 휴식을 위한 최적의 장소에 위치하고 있습니다.
+      </Text>
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 54 }}>
+        <Image
+          source={require('./path/to/call.png')}
+          style={{ width: 22, height: 22, marginHorizontal: 10 }}
+        />
+        <Text>064-801-5555</Text>
+      </View>
+      <Button title="예약하기" onPress={onButtonBClicked} />
+      <Button title="인스타그램" onPress={onButton6Clicked} />
+      <Button title="구글리뷰" onPress={onButton7Clicked} />
+      <Button title="네이버리뷰" onPress={onButton14Clicked} />
+    </View>
+  );
+};
+
+export default HomeScreen;
