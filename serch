@@ -1,0 +1,62 @@
+import React from 'react';
+import { View, Text, Button, Image } from 'react-native';
+import { Navigation } from 'react-native-navigation';
+
+class SerchActivity extends React.Component {
+  handleRecommendTripClick = () => {
+   Navigation.push(this.props.componentId, {
+    component: {
+      name: 'HomeScreen',
+      options: {
+        topBar: {
+          title: {
+            text: 'Home',
+  };
+
+  handleRecommendAccommodationClick = () => {
+    Navigation.push(this.props.componentId, {
+    component: {
+      name: 'TripScreen',
+      options: {
+        topBar: {
+          title: {
+            text: 'Trip',
+  };
+
+  render() {
+    return (
+      <View style={{ flex: 1, backgroundColor: '#ECF2FA', padding: 16 }}>
+        <Text style={{ marginBottom: 10 }}>이달의 여행지</Text>
+        <Image
+          style={{ width: '100%', height: 130, marginBottom: 10 }}
+          source={require('./path/to/jeju1')}
+        />
+        <Image
+          style={{ width: '100%', height: 130, marginBottom: 10 }}
+          source={require('./path/to/gang')}
+        />
+
+        <Text style={{ marginTop: 48, marginBottom: 20 }}>이달의 숙소</Text>
+        <Image
+          style={{ width: '100%', height: 123, marginBottom: 20 }}
+          source={require('./path/to/jeju2')}
+        />
+        <Image
+          style={{ width: '100%', height: 123 }}
+          source={require('./path/to/gang2')}
+        />
+
+        <Button
+          title="여행지 추천"
+          onPress={this.handleRecommendTripClick}
+        />
+        <Button
+          title="숙소 추천"
+          onPress={this.handleRecommendAccommodationClick}
+        />
+      </View>
+    );
+  }
+}
+
+export default SerchActivity;
