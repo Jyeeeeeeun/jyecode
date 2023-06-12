@@ -1,0 +1,79 @@
+import React from 'react';
+import { View, Text, Button, Linking } from 'react-native';
+import { Navigation } from 'react-native-navigation';
+import { Linking } from 'react-native';
+
+
+const TripActivity = () => {
+ const openUrl = (url) => {
+  Linking.openURL(url)
+    .catch((error) => {
+      console.error('URL 열기 실패:', error);
+    });
+  };
+
+  return (
+    <View style={{ flex: 1, backgroundColor: '#ECF2FA' }}>
+      <Text style={{ marginTop: 66, fontSize: 20, fontWeight: 'bold' }}>한라산</Text>
+
+      <View>
+       <Image
+        style={{ width: '100%', height: 181, marginVertical: 18 }}
+        source={require('./path/to/jeju3.png')}
+      />
+      </View>
+
+      <Text style={{ marginHorizontal: 51, marginTop: 14, marginBottom: 13 }}>
+        제주도에 위치한 휴화산입니다. 정상에는 화산호인 백록담이 있으며 낮에만 등산이 가능합니다.
+      </Text>
+
+      <Text>대한민국의 화산</Text>
+
+      <Button
+        title="탐방프로그램 예약"
+        onPress={() =>
+          openUrl('http://www.jeju.go.kr/hallasan/reserv/program/course01.htm')
+        }
+      />
+
+      <Button
+        title="탐방안내"
+        onPress={() =>
+          openUrl('http://www.jeju.go.kr/hallasan/info/info/info.htm')
+        }
+      />
+
+      <Button
+        title="한라산국립공원"
+        onPress={() => openUrl('http://www.jeju.go.kr/hallasan/index.htm')}
+      />
+
+      <Button
+        title="열린마당"
+        onPress={() =>
+          openUrl('http://www.jeju.go.kr/hallasan/notice/notice.htm')
+        }
+      />
+
+      <Button
+        title="네이버리뷰"
+        onPress={() =>
+          openUrl(
+            'https://map.naver.com/v5/entry/place/11796130?lng=126.53439149999889&lat=33.35910359999967&placePath=%2Freview%2Fvisitor&entry=plt&c=15,0,0,0,dh'
+          )
+        }
+      />
+
+      <Button
+        title="구글리뷰"
+        onPress={() =>
+          openUrl(
+            'https://www.google.co.kr/search?q=%ED%95%9C%EB%9D%BC%EC%82%B0&bih=961&biw=1865&hl=ko&sxsrf=APwXEdezqWBBZCicieN2I1J_PwseMI-mBg%3A1685981902587&source=hp&ei=zgp-ZPrTIdrN2roPieyE2Aw&iflsig=AOEireoAAAAAZH4Y3o__iZDD1KvrepU82JqyasF-S6B9&ved=0ahUKEwj68piDxKz_AhXaplYBHQk2AcsQ4dUDCAs&uact=5&oq=%ED%95%9C%EB%9D%BC%EC%82%B0&gs_lcp=Cgdnd3Mtd2l6EAMyBwguEIoFECcyEAgAEIAEEBQQhwIQsQMQgwEy'
+          )
+        }
+      />
+    </View>
+  );
+};
+
+export default TripActivity;
