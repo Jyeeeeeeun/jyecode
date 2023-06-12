@@ -1,0 +1,77 @@
+import React from 'react';
+import { View, Text, Button, StyleSheet, Image } from 'react-native';
+
+class MainScreen extends React.Component {
+  handleLoginClick = () => {
+    Navigation.push(this.props.componentId, {
+    component: {
+      name: 'AccountScreen',
+      options: {
+        topBar: {
+          title: {
+            text: 'Account',
+  };
+
+  handleAccountClick = () => {
+    Navigation.push(this.props.componentId, {
+    component: {
+      name: 'LoginScreen',
+      options: {
+        topBar: {
+          title: {
+            text: 'Login',
+  };
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Image style={styles.image} source={require('./path/to/airplane.png')} />
+
+        <Text style={styles.title}>Welcome Trip!</Text>
+
+        <View style={styles.buttonContainer}>
+          <Button
+            title="Log In"
+            onPress={this.handleLoginClick}
+            style={styles.button}
+            color="#000000"
+          />
+
+          <Button
+            title="Create Account"
+            onPress={this.handleAccountClick}
+            style={styles.button}
+            color="#000000"
+          />
+        </View>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ECF2FA',
+  },
+  image: {
+    width: 100,
+    height: 100,
+    margin: 20,
+  },
+  title: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: '#000000',
+  },
+  buttonContainer: {
+    marginTop: 20,
+  },
+  button: {
+    marginBottom: 10,
+  },
+});
+
+export default MainScreen;
