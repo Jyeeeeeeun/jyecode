@@ -1,0 +1,49 @@
+import React from 'react';
+import { View, Text, TextInput, Button } from 'react-native';
+
+class AccountScreen extends React.Component {
+  handleClick = () => {
+    
+  };
+
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={{ fontSize: 40, fontWeight: 'bold', marginBottom: 63 }}>Create Account</Text>
+
+        <TextInput
+          style={{ width: '80%', height: 40, marginBottom: 20, borderColor: 'gray', borderWidth: 1 }}
+          placeholder="Name"
+        />
+
+        <TextInput
+          style={{ width: '80%', height: 40, marginBottom: 20, borderColor: 'gray', borderWidth: 1 }}
+          placeholder="Phone"
+        />
+
+        <TextInput
+          style={{ width: '80%', height: 40, marginBottom: 20, borderColor: 'gray', borderWidth: 1 }}
+          placeholder="E-Mail"
+        />
+
+        <TextInput
+          style={{ width: '80%', height: 40, marginBottom: 20, borderColor: 'gray', borderWidth: 1 }}
+          placeholder="ID"
+        />
+
+        <TextInput
+          style={{ width: '80%', height: 40, marginBottom: 20, borderColor: 'gray', borderWidth: 1 }}
+          placeholder="Password"
+          secureTextEntry
+        />
+
+        <Button
+          title="Create"
+          onPress={this.handleClick}
+        />
+      </View>
+    );
+  }
+}
+
+export default AccountScreen;
